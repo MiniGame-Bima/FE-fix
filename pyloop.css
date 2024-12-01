@@ -6,10 +6,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 폰트 적용 */
 body {
     color: #ffff;
-    font-family: 'GowunBatang-Regular', Arial, sans-serif; /* GowunBatang-Regular 폰트를 우선으로 사용 */
+    font-family:  'DungGeunMo', Arial, sans-serif; /* GowunBatang-Regular 폰트를 우선으로 사용 */
     background: url('img/008.png') no-repeat center center; /* 배경 이미지 적용 */
     background-size: 1920px 1080px; /* 배경 이미지를 1920x1080으로 고정 */
     margin: 0;
@@ -20,14 +27,44 @@ body {
     align-items: center;
     height: 100vh; /* 화면 전체를 사용 */
     flex-direction: column;
+    position: relative;
+    overflow: hidden; 
 }
 
+/* 배경 어둡게 처리 */
+body::before {
+    content: ""; /* 빈 콘텐츠 생성 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* 반투명 검정 오버레이 (30% 불투명도) */
+    z-index: 1; /* 오버레이를 배경 위에 위치시키되 콘텐츠 아래에 두기 */
+    pointer-events: none; /* 오버레이가 클릭 이벤트를 방해하지 않도록 설정 */
+}
+
+/* 텍스트 컨테이너 */
+.text-container {
+    position: relative; /* 레이아웃 조정 */
+    z-index: 2; /* 텍스트가 오버레이 위에 표시되도록 설정 */
+}
+
+/* about-text 스타일 */
+.about-text {
+    position: relative;
+    z-index: 4; /* about-text 요소를 다른 모든 요소 위에 표시 */
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}
 
 /* 로고 스타일 */
 .logo-container {
     position: absolute;
     top: 20px;
     left: 40px;
+    z-index: 3; /* 로고가 오버레이 위에 표시되도록 설정 */
 }
 
 .logo {
@@ -43,4 +80,5 @@ body {
     text-align: center;
     font-size: 14px;
     color: #ffff;
+    z-index: 3; /* 푸터가 오버레이 위에 표시되도록 설정 */
 }

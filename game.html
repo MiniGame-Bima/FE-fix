@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Selection</title>
+  <link rel="icon" href="img/favicon2.png" type="img/png">
+  <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <!-- 로고 -->
+    <div class="logo-container">
+        <!-- 로고 이미지를 클릭하면 index.html로 이동 -->
+        <a href="index.html">
+            <img src="img/pyloop logo.png" alt="Logo" class="logo">
+        </a>
+    </div>
+  <!-- 버튼 컨테이너 -->
+   
+  <div class="button-container">
+    <button id="aboutPyloopButton" class="action-button">About Pyloop</button>
+    <button id="snakeButton" class="action-button snake-button">Snake Game</button>
+    <button id="ticTacToeButton" class="action-button tictactoe-button">Tic-Tac-Toe Game</button>
+    <button id="brickButton" class="action-button brick-button">Brick Game</button>
+    <button id="zetButton" class="action-button zet-button">Zet Game</button>
+    <button id="tetrisButton" class="action-button tetris-button">Tetris Game</button>
+  </div>
+  <div class="footer">
+    © 2024 PyLoop. All rights reserved.
+</div>
+
+  <!-- 팝업 -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <h2 id="popup-title"></h2>
+      <p id="popup-description"></p>
+      <button id="closePopup" class="close-popup">Game Start</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

@@ -58,22 +58,27 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
-  background: white;
-  padding: 20px;
+  width: 400px; /* 팝업의 너비를 늘림 */
+  background-color: white; /* 배경색을 흰색으로 설정 */
+  color: black; /* 텍스트 색상을 검정으로 설정 */
+  padding: 30px; /* 여유로운 여백 추가 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  max-height: 80%; /* 최대 높이를 설정하여 너무 커지지 않도록 제한 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 가능 */
 }
 
+/* 팝업 숨기기 */
 .popup.hidden {
   display: none;
 }
 
+/* 팝업 닫기 버튼 */
 .close-popup {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px; /* 버튼 여백을 조금 더 여유 있게 설정 */
   background-color: #007bff;
-  color: white;
+  color: black; /* 버튼 텍스트 색상을 검정으로 설정 */
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -90,7 +95,7 @@ body {
   width: 100%;
   text-align: center;
   font-size: 14px;
-  color: white;
+  color: black;
   background: transparent;
   border: none;
   padding: 0;
